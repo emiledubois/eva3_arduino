@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Permisos Bluetooth -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+
+    <!-- Permisos de Ubicación (requeridos para Bluetooth en Android 6+) -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- Permiso de Internet para ThingSpeak -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Evaluacion3"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+
+        <!-- Actividad Principal (MainActivity) -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Evaluacion3">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Actividad Monitor en Tiempo Real -->
+        <activity
+            android:name=".MonitorTiempoReal"
+            android:exported="false"
+            android:label="Monitor Tiempo Real"
+            android:theme="@style/Theme.Evaluacion3" />
+
+        <!-- Actividad Historial de Datos -->
+        <activity
+            android:name=".HistorialDatos"
+            android:exported="false"
+            android:label="Historial de Datos"
+            android:theme="@style/Theme.Evaluacion3" />
+
+        <!-- Actividad Configuración -->
+        <activity
+            android:name=".ConfiguracionApp"
+            android:exported="false"
+            android:label="Configuración"
+            android:theme="@style/Theme.Evaluacion3" />
+
+    </application>
+
+</manifest>
